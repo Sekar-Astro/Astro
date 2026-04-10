@@ -1,4 +1,4 @@
-import { type ButtonHTMLAttributes, type ReactElement, type ReactNode, cloneElement } from "react";
+import { type ButtonHTMLAttributes, type ReactElement, type ReactNode, type MouseEventHandler, cloneElement } from "react";
 import clsx from "clsx";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -8,6 +8,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   nativeButton?: boolean;
   render?: ReactElement;
   children?: ReactNode;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+  type?: "button" | "submit" | "reset";
 }
 
 const variantStyles: Record<NonNullable<ButtonProps["variant"]>, string> = {

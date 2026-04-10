@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { motion } from "motion/react";
 
 const navLinks = [
@@ -59,42 +58,45 @@ export const Navbar = () => {
 
 				{/* Mobile Nav */}
 				<div className="md:hidden">
-					<Sheet open={isOpen} onOpenChange={setIsOpen}>
-						<SheetTrigger render={<Button variant="ghost" size="icon" />}>
-							<Menu className="h-6 w-6" />
-						</SheetTrigger>
-						<SheetContent side="right" className="w-[300px] sm:w-[400px] bg-white">
-							<SheetTitle className="font-serif text-2xl mb-8">
-								Navigation
-							</SheetTitle>
-							<div className="flex flex-col gap-6 mt-8">
-								{navLinks.map((link) => (
-									<Link
-										key={link.path}
-										to={link.path}
-										onClick={() => setIsOpen(false)}
-										className={`text-lg font-medium transition-colors hover:text-primary ${
-											location.pathname === link.path
-												? "text-primary"
-												: "text-muted-foreground"
-										}`}
-									>
-										{link.name}
-									</Link>
-								))}
-								<Button
-									nativeButton={false}
-									render={<Link to="/booking" />}
-									className="bg-primary hover:bg-primary/90 w-full mt-4"
-									onClick={() => setIsOpen(false)}
-								>
-									Book Now
-								</Button>
-							</div>
-						</SheetContent>
-					</Sheet>
+					<Button
+						variant="ghost"
+						size="icon"
+						onClick={() => setIsOpen((open) => !open)}
+						aria-label={isOpen ? "Close menu" : "Open menu"}
+					>
+						{isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+					</Button>
 				</div>
 			</div>
+
+			{isOpen && (
+				<div className="md:hidden border-t border-border bg-background/98 px-4 pb-4 pt-2 shadow-xl">
+					<div className="flex flex-col gap-4">
+						{navLinks.map((link) => (
+							<Link
+								key={link.path}
+								to={link.path}
+								onClick={() => setIsOpen(false)}
+								className={`text-lg font-medium transition-colors hover:text-primary ${
+									location.pathname === link.path
+										? "text-primary"
+										: "text-muted-foreground"
+								}`}
+							>
+								{link.name}
+							</Link>
+						))}
+						<Button
+							nativeButton={false}
+							render={<Link to="/booking" />}
+							className="bg-primary hover:bg-primary/90 w-full mt-2"
+							onClick={() => setIsOpen(false)}
+						>
+							Book Now
+						</Button>
+					</div>
+				</div>
+			)}
 		</nav>
 	);
 };
