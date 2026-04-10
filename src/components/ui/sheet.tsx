@@ -81,7 +81,7 @@ export const SheetContent = ({ side = "right", className, children }: SheetConte
       />
       <div
         className={clsx(
-          "relative h-full w-full max-w-xs bg-background shadow-2xl ring-1 ring-black/10",
+          "relative h-full w-full max-w-xs bg-background/98 shadow-2xl ring-1 ring-black/10 backdrop-blur-xl",
           side === "left" ? "mr-auto" : "ml-auto",
           className,
         )}

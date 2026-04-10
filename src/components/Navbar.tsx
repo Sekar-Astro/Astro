@@ -17,7 +17,7 @@ export const Navbar = () => {
 	const location = useLocation();
 
 	return (
-		<nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur-md shadow-sm">
+		<nav className="sticky top-0 z-50 w-full border-b bg-background shadow-sm">
 			<div className="container mx-auto flex h-16 items-center justify-between px-4">
 				<Link to="/" className="flex items-center gap-2 group">
 					<motion.div
@@ -63,7 +63,7 @@ export const Navbar = () => {
 						<SheetTrigger render={<Button variant="ghost" size="icon" />}>
 							<Menu className="h-6 w-6" />
 						</SheetTrigger>
-						<SheetContent side="right" className="w-[300px] sm:w-[400px]">
+						<SheetContent side="right" className="w-[300px] sm:w-[400px] bg-white">
 							<SheetTitle className="font-serif text-2xl mb-8">
 								Navigation
 							</SheetTitle>
