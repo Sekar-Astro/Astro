@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+
+  --color-background: #FAF9F6;
+  --color-foreground: #1A1A1A;
+
+  --color-primary: #FF9933; /* Saffron */
+  --color-primary-foreground: #FFFFFF;
+
+  --color-secondary: #006D77; /* Deep Teal */
+  --color-secondary-foreground: #FFFFFF;
+
+  --color-accent: #D4AF37; /* Gold */
+  --color-accent-foreground: #1A1A1A;
+
+  --color-muted: #F0F0F0;
+  --color-muted-foreground: #666666;
+
+  --color-card: #FFFFFF;
+  --color-card-foreground: #1A1A1A;
+
+  --color-border: #E5E5E5;
+  --color-input: #E5E5E5;
+  --color-ring: #FF9933;
+
+  --radius-lg: 1rem;
+  --radius-md: 0.75rem;
+  --radius-sm: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-medium tracking-tight;
+  }
+}
+
+.mandala-bg {
+  background-image: radial-gradient(circle at 2px 2px, rgba(212, 175, 55, 0.1) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+.vedic-border {
+  border: 1px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(to right, #FF9933, #D4AF37, #006D77) border-box;
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+}
+
+/* Shadcn UI compatibility */
+:root {
+  --background: 0 0% 98%;
+  --foreground: 0 0% 10%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 10%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 10%;
+  --primary: 28 100% 60%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 184 100% 23%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 40%;
+  --accent: 46 65% 52%;
+  --accent-foreground: 0 0% 10%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --ring: 28 100% 60%;
+  --radius: 0.75rem;
+}
