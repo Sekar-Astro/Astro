@@ -74,7 +74,7 @@ export const Home = () => {
 							initial={{ opacity: 0, scale: 0.9, x: 30 }}
 							animate={{ opacity: 1, scale: 1, x: 0 }}
 							transition={{ duration: 0.8, delay: 0.2 }}
-							className="relative hidden lg:block"
+							className="relative block mx-auto w-full max-w-xl"
 						>
 							<div className="relative z-10 rounded-3xl overflow-hidden p-2 bg-transparent">
 								<div className="relative">
@@ -88,8 +88,8 @@ export const Home = () => {
 								</div>
 							</div>
 							{/* Decorative elements around headshot */}
-							<div className="absolute -top-6 -right-6 w-24 h-24 bg-accent/20 rounded-full blur-2xl animate-pulse" />
-							<div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/20 rounded-full blur-3xl animate-pulse" />
+							<div className="hidden lg:block absolute -top-6 -right-6 w-24 h-24 bg-accent/20 rounded-full blur-2xl animate-pulse" />
+							<div className="hidden lg:block absolute -bottom-6 -left-6 w-32 h-32 bg-primary/20 rounded-full blur-3xl animate-pulse" />
 						</motion.div>
 					</div>
 				</div>
