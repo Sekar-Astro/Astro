@@ -69,8 +69,8 @@ export const Booking = () => {
 
             {/* Calendar Embed */}
             <div className="lg:col-span-2">
-              <Card className="border-none shadow-2xl overflow-hidden h-[800px] bg-white">
-                <CardContent className="p-0 h-full">
+              <Card className="border-none shadow-2xl overflow-hidden bg-white min-h-[650px] lg:min-h-[800px]">
+                <CardContent className="p-0 h-full min-h-[650px]">
                   <iframe 
                     src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2qVAFDAA6CHd_1Wxm2ePhHGBnxtnkfVBVI_VMVMTs09JlxMVC4D69IMpP7aylqi1BathGxBfaq?gv=true" 
                     style={{ border: 0 }} 
